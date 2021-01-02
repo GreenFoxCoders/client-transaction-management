@@ -7,7 +7,7 @@ class Client(models.Model):
     avatar = models.ImageField(upload_to='avatar/')
 
     def __str__(self):
-        return f'{self.last_name}({self.email})'
+        return f'{self.first_name} {self.last_name}'
 class Transaction(models.Model):
     to = models.ForeignKey(Client, related_name='sent', on_delete=models.CASCADE)
     frm = models.ForeignKey(Client, related_name='recieved', on_delete=models.CASCADE)
