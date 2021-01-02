@@ -1,0 +1,16 @@
+{% extends 'ctapp/layout.html' %}
+{% load bootstrap5 %}
+{% block title %}Add Transaction{% endblock %}
+{% block content %} 
+
+{% bootstrap_form_errors form %}
+<div class="mt-4"></div>
+<form action="" method="post" class="form">
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="mb-3">{% bootstrap_field field %}</div>     
+    {% endfor %}
+    {% bootstrap_button "Save" button_type="submit" button_class="btn-dark" %}
+</form>
+
+{% endblock %}
