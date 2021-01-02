@@ -12,4 +12,3 @@ class AddTransactionForm(ModelForm):
     class Meta:
         model = Transaction
         fields = '__all__'
-        exclude = ['frm']

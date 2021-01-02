@@ -10,7 +10,6 @@ class Client(models.Model):
         return f'{self.first_name} {self.last_name}'
 class Transaction(models.Model):
     to = models.ForeignKey(Client, related_name='sent', on_delete=models.CASCADE)
-    frm = models.ForeignKey(Client, related_name='recieved', on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
     amount = models.DecimalField(max_digits=50, decimal_places=3)
 
